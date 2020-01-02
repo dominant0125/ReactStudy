@@ -1,26 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './Component';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const name = 'React';
+    const style = {
+        backgroundColor: 'Black',  // background-color -> backgroundColor
+        color: 'aqua',
+        fontSize: '48px',          // font-size    -> fontSize
+        fontWeight: 'bold',        // font-weight  -> fontWeight
+        padding: '16px',
+    }
+    return (
+        <>
+            {/* Make comments like this
+            or
+            this*/}
+            /*if make comments like this, ESLint hits it*/
+            <div style={style}>
+                {name === 'React' && <p>True</p>}
+            </div>
+            <div className="react">
+                Test
+            </div>
+            <MyComponent name={"Park"}>Child</MyComponent>
+        </>
+    );
 }
 
 export default App;
